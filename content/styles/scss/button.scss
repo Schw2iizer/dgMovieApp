@@ -1,0 +1,17 @@
+.years-button {
+  width: 100px;
+  height: 43px;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 2;
+  cursor: pointer;
+  font-size: 16px;
+  &.active {
+    background-color: #3571ab;
+    color: #fff;
+  }
+  &.not-active {
+    background-color: #f6f7f7;
+    color: #596065;
+  }
+}

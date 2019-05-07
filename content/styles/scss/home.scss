@@ -1,0 +1,99 @@
+@import './mixins.scss';
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+.container {
+  background-color: #f7f9fa;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  .center-container {
+    position: relative;
+    background-color: #fff;
+    width: 700px;
+    height: 75px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .movie-container {
+    width: 696px;
+    height: 225px;
+    border-radius: 5px;
+    border: 2px solid #35383a;
+    background-color: #e8ebee;
+    display: flex;
+    margin-bottom: 10px;
+    .poster-wrapper {
+      width: 25%;
+      .poster {
+        margin-top: 17px;
+        margin-left: 20px;
+        height: 190px;
+        max-width: 140px;
+        min-width: 140px;
+        width: auto;
+        border-radius: 7px;
+      }
+    }
+    .description {
+      width: 70%;
+      padding: 10px 13px;
+      .title {
+        border-bottom: 2px solid #949ea4;
+        font-size: 28px;
+        color: #2a2e2f;
+        padding-bottom: 3px;
+      }
+      .details {
+        margin-top: 7px;
+        margin-bottom: 15px;
+        @include clearfix;
+        .rating {
+          float: left;
+          text-align: center;
+          letter-spacing: 1px;
+          width: 60px;
+          padding: 5px;
+          border-radius: 5px;
+          border: 1px solid #828e93;
+          color: #828e93;
+          margin-right: 20px;
+        }
+        .time {
+          float: left;
+          line-height: 2;
+        }
+        .year {
+          float: right;
+          line-height: 2;
+          flex-grow: 10;
+        }
+      }
+      .synopsis {
+        margin-bottom: 20px;
+      }
+      .button-wrapper {
+        @include clearfix;
+        margin-bottom: 10px;
+        .button {
+          float: right;
+          color: #fff;
+          text-decoration: none;
+          background-color: #f8ac41;
+          height: 38px;
+          width: 165px;
+          border-radius: 5px;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

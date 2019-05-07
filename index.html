@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<title>Movies</title>
+<link rel="stylesheet" href="content/styles/css/site.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+<body ng-app="dgMovieApp" ng-controller="mainController" ng-cloak>
+
+ <div class="container">
+   <div class="center-container" >
+     <button class="years-button" ng-class="{'active': showThousands}" ng-click="showTwoThousandsMovies()">2000's</button>
+     <button class="years-button" ng-class="{'active': showNineties}" ng-click="showNinetiesMovies()">1990's</button>
+   </div>
+
+     <div class="movie-container" ng-repeat="movie in movies | filter:search">
+       <div class="poster-wrapper">
+         <img src={{movie.Poster}} class="poster"/>
+       </div>
+       <div class="description">
+         <title-component title={{movie.Title}}></title-component>
+         <div class="details">
+           <rating-component rating="PG-13"></rating-component>
+           <div class="time">
+             140 min
+           </div>
+           <div class="year">
+             {{movie.Year}}
+           </div>
+         </div>
+         <div class="synopsis">
+           After training with his mentor, Batman begins his war on crime to free the crime-ridden Gotham City from corruption that the Sccarecrow and the League of Shadows have cast upon it.
+         </div>
+         <div class="button-wrapper">
+           <a href="" ng-click="routeToIMDB(movie.imdbID)" class="button">View on IMDB</a>
+         </div>
+       </div>
+     </div>
+
+ </div>
+
+ <script src="./node_modules/angular/angular.js"></script>
+ <script src="scripts/app.js"></script>
+ <script src="scripts/mainController.js"></script>
+ <script src="scripts/mainService.js"></script>
+ <script src="scripts/components/button.component.js"></script>
+ <script src="scripts/components/title.component.js"></script>
+ <script src="scripts/components/rating.component.js"></script>
+</body>
+</html>
