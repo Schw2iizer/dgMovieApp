@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <title>Movies</title>
 <link rel="stylesheet" href="content/styles/css/site.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 </head>
 <body ng-app="dgMovieApp" ng-controller="mainController" ng-cloak>
@@ -33,9 +34,7 @@
          <div class="synopsis">
            {{movie.Plot}}
          </div>
-         <div class="button-wrapper">
-           <a href="" ng-click="routeToIMDB(movie.imdbID)" class="button">View on IMDB</a>
-         </div>
+         <a href="" ng-click="routeToIMDB(movie.imdbID)" class="button">View on IMDB</a>
        </div>
      </div>
 

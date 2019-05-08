@@ -5,5 +5,5 @@ var dgMovieApp = angular.module('dgMovieApp')
     text: '@',
     active: '@',
   },
-  template: `<button class="years-button" ng-class="{'active': $ctrl.active, 'not-active': !$ctrl.active}">{{$ctrl.text}}</button>`
+  template: `<button class="years-button" ng-class="{'active': $ctrl.active}">{{$ctrl.text}}</button>`
 })
