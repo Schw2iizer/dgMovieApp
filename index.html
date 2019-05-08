@@ -15,23 +15,23 @@
      <button class="years-button" ng-class="{'active': showNineties}" ng-click="showNinetiesMovies()">1990's</button>
    </div>
 
-     <div class="movie-container" ng-repeat="movie in movies | filter:search">
+     <div class="movie-container" ng-repeat="movie in movieDetails | filter:search track by $index">
        <div class="poster-wrapper">
          <img src={{movie.Poster}} class="poster"/>
        </div>
        <div class="description">
          <title-component title={{movie.Title}}></title-component>
          <div class="details">
-           <rating-component rating="PG-13"></rating-component>
+           <rating-component rating="{{movie.Rated}}"></rating-component>
            <div class="time">
-             140 min
+             {{movie.Runtime}}
            </div>
            <div class="year">
-             {{movie.Year}}
+             {{movie.Released}}
            </div>
          </div>
          <div class="synopsis">
-           After training with his mentor, Batman begins his war on crime to free the crime-ridden Gotham City from corruption that the Sccarecrow and the League of Shadows have cast upon it.
+           {{movie.Plot}}
          </div>
          <div class="button-wrapper">
            <a href="" ng-click="routeToIMDB(movie.imdbID)" class="button">View on IMDB</a>
